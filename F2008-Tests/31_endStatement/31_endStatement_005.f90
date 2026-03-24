@@ -1,0 +1,27 @@
+! RUN: %flang %s -o %t && %t | FileCheck %s
+! RUN: %gfortran %s -o %t && %t | FileCheck %s
+
+! SPEC: F2008 R1232, R1236, C1258
+
+program main
+    implicit none
+    integer :: res
+    integer :: x = 100
+
+    res = func1(x)
+
+contains
+    ! ====================
+    ! A-1 function
+    ! B-1 name
+    ! C-1 internal
+    ! ====================
+    integer function func1(x)
+      integer, intent(in) :: x
+        print *, 'func1:', x * 3
+        func1 = 1
+    end function func1
+
+end program
+
+! CHECK:  func1: 300

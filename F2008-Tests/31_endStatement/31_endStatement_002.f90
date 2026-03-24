@@ -1,0 +1,33 @@
+! RUN: %flang %s -o %t && %t | FileCheck %s
+! RUN: %gfortran %s -o %t && %t | FileCheck %s
+
+! SPEC: F2008 R1232, R1236, C1258
+
+module mod
+
+contains
+
+! ====================
+! A-1 function
+! B-2 none
+! C-2 module procedure
+! ====================
+integer function func1(x)
+    integer, intent(in) :: x
+    func1 = x * 100
+end
+
+end module mod
+
+program main
+    use mod
+    implicit none
+    integer :: x = 100
+    integer res
+
+    res = func1(x)
+    print *, 'func1:', res
+
+end program
+
+! CHECK: func1: 10000
