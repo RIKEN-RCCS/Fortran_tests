@@ -18,10 +18,10 @@ program main
 
 end program
 
-! GFORT: 08_allocatableComponentsOfRecursiveTyp_c001.f90:10:
+! GFORT: 08_recursiveAlloc_c001.f90:10:
 ! GFORT-NOT: .f90
 ! GFORT: Error:
 
-! FLANG: 08_allocatableComponentsOfRecursiveTyp_c001.f90:10:
+! FLANG: 08_recursiveAlloc_c001.f90:10:
 ! FLANG-SAME: error:
 

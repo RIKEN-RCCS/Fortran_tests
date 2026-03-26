@@ -27,7 +27,7 @@ os.umask(0o000)
 #######################
 
 # LLVM installation
-llvm_root = "/usr/lib/llvm-21"
+llvm_root = "/home/share/llvm21/builds"
 llvm_bin_dir = os.path.join(llvm_root, "bin")
 
 # tools

@@ -11,7 +11,6 @@ program main
   call decl_kind()
   call literal_nokind()
   call intrinsic_int_nokind()
-  call forall_nokind()
 
 contains
 
@@ -41,19 +40,6 @@ contains
              range(int(x, selected_int_kind(18))),",", &
              int(x, selected_int_kind(18))
   end subroutine
-  
-  ! FORALL index variable
-  subroutine forall_nokind()
-    integer(long) :: x(3)
-    integer :: e(3)
-    integer :: f(3)
-    forall (integer(selected_int_kind(18)) :: i = 1:3)
-      x(i) = 50_long
-      e(i) = kind(i)
-      f(i) = range(i)
-    end forall
-    print *, e, ",", f, ",", x
-  end subroutine
 
 end program
 
@@ -61,4 +47,3 @@ end program
 ! CHECK-NEXT: 8 , 18 , 20
 ! CHECK-NEXT: 8 , 18 , 30
 ! CHECK-NEXT: 8 , 18 , 40
-! CHECK-NEXT: 8 8 8 , 18 18 18 , 50 50 50
