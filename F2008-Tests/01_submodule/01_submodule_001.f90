@@ -1,5 +1,5 @@
 ! RUN: %gfortran %s -o %t && %t | FileCheck %s
-! RUN  : %flang %s -o %t && %t | FileCheck %s
+! RUN: %flang %s -o %t && %t | FileCheck %s
 
 ! SPEC: F2008:11.2.3 Submodules
 

@@ -15,6 +15,9 @@ config.suffixes = ['.f90']
 # Root directory
 config.test_source_root = os.path.dirname(__file__)
 
+# Home directories
+config.environment['HOME'] = os.environ.get('HOME', '/tmp')
+
 # Ignore directories
 config.excludes = ['Inputs', 'CMakeLists.txt']
 
