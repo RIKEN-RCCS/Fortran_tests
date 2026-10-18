@@ -24,7 +24,7 @@ end module alpha
 
 submodule(alpha) beta
 contains
-  integer function second()
+  module integer function second()
     second = 2
   end function second
 end
@@ -32,7 +32,7 @@ end
 
 submodule(alpha:beta) gamma
 contains
-  integer function third()
+  module integer function third()
     third = 3
   end function third
 end submodule gamma
