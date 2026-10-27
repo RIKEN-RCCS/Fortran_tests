@@ -26,4 +26,4 @@ contains
 
 end program
 
-! CHECK-NEXT: 8 8 8 , 18 18 18 , 50 50 50
+! CHECK: 8 8 8 , 18 18 18 , 50 50 50

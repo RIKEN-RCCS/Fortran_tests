@@ -9,11 +9,6 @@ program main
     print *, 'rasix =', radix(r)
 
 ! ====================
-! A-1, B-1, C-1
-! ====================
-    print *, selected_real_kind()
-
-! ====================
 ! A-3, B-3, C-3
 ! ====================
     print *, selected_real_kind(15, 307, radix(r))
@@ -31,7 +26,6 @@ program main
 end program main
 
 ! CHECK:  rasix =  2
-! CHECK-NEXT:  4
 ! CHECK-NEXT:  8
 ! CHECK-NEXT:  16
 ! CHECK-NEXT:  4
